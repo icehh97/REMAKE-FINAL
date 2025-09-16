@@ -30,7 +30,7 @@ void TestMonster() {
     hanzo.Attack();
 
     diva.ShowInfo();
-    printf("\n"); ,
+    printf("\n");
     diva.Attack();
 
     bob.ShowInfo();
