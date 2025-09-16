@@ -136,6 +136,7 @@
     <ClCompile Include="header.cpp" />
     <ClCompile Include="HellowWorld.cpp" />
     <ClCompile Include="Just Only Check.cpp" />
+    <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Personal notes.cpp" />
     <ClCompile Include="Practice_0905.cpp" />
     <ClCompile Include="TestMath.cpp" />
@@ -157,6 +158,8 @@
     <ClInclude Include="Day0916.h" />
     <ClInclude Include="fuck.h" />
     <ClInclude Include="header.h" />
+    <ClInclude Include="HellowWorld.h" />
+    <ClInclude Include="Monster.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Practice_0905.h" />
     <ClInclude Include="TestMath.h" />
