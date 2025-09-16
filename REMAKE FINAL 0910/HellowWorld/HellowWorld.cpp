@@ -457,7 +457,6 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 //	-부모 클래스의 포인터나 참조를 통해 자식 클래스를 다룰 수 있다.
 
 
-
 #define _CRT_SECURE_NO_WARNINGS
 #define _CRTDBG_MAP_ALLOC
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
@@ -478,9 +477,6 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 #include "Day0912.h"
 #include "Day0915.h"
 #include "Day0916.h"
-#include "Animal.h"     // ★ 반드시 포함
-
-
 #include "Position.h"
 
 
@@ -495,8 +491,10 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 	printf("\n\n\n\n\n\n\n\n\n");
 
 	Day0916 day0916;
-	day0916.ClassInstance();
-	AnimalShow();
+	//day0916.ClassInstance();
+	//day0916.TestAnimal();
+	day0916.TestTiger();
+
 	//Day0915_WeekPracticeBlackjackTest();
 	//Day0915_WeekPracticeBlackjack();
 
@@ -531,7 +529,6 @@ int main() // 엔트리 포인트(코드가 시작되는 곳)
 
 	//Day0908();
 	//Day0908_Ref();
-	std::cin.get(); // 콘솔 바로 닫힘 방지(선택)
 
 	return 0;
 }

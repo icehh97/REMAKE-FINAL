@@ -78,7 +78,7 @@
     <ClCompile Include="Car.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="WangGu.cpp">
+    <ClCompile Include="Tiger.cpp">
       <Filter>리소스 파일\ㅈ같네</Filter>
     </ClCompile>
     <ClCompile Include="fuck.cpp">
@@ -134,7 +134,7 @@
     <ClInclude Include="Animal.h">
       <Filter>리소스 파일\ㅈ같네</Filter>
     </ClInclude>
-    <ClInclude Include="WangGu.h">
+    <ClInclude Include="Tiger.h">
       <Filter>리소스 파일\ㅈ같네</Filter>
     </ClInclude>
     <ClInclude Include="fuck.h">

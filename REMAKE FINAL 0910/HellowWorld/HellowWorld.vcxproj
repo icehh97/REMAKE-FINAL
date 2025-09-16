@@ -140,7 +140,7 @@
     <ClCompile Include="Practice_0905.cpp" />
     <ClCompile Include="TestMath.cpp" />
     <ClCompile Include="Day0915.cpp" />
-    <ClCompile Include="WangGu.cpp" />
+    <ClCompile Include="Tiger.cpp" />
     <ClCompile Include="연습장.cpp" />
     <ClCompile Include="이런느낌.cpp" />
     <ClCompile Include="주말과제.cpp" />
@@ -160,7 +160,7 @@
     <ClInclude Include="Position.h" />
     <ClInclude Include="Practice_0905.h" />
     <ClInclude Include="TestMath.h" />
-    <ClInclude Include="WangGu.h" />
+    <ClInclude Include="Tiger.h" />
     <ClInclude Include="이런느낌.h" />
     <ClInclude Include="주말과제.h" />
     <ClInclude Include="Day0915.h" />
