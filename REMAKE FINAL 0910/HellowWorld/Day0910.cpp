@@ -96,10 +96,64 @@ void Day0910_String()
 	// 4. 문자열 두개를 비교하는 함수 만들기
 	//		리턴 값이 두 문자열이 같으면 0, 첫번째가 작으면 음수, 두번째가 작으면 양수
 	//		int MyStringCompare(const char* String1, const char* string2);
+	char A[10], B[10];
+	printf("\n 첫번째 문자열을 입력해주세요.\n");
+	std::cin >> A;
+	printf("\n두번째 문자열을 입력해주세요.\n");
+	std::cin >> B;
+
+	int Compare = MyStringCompare(A, B);
+
+	if (Compare==0)
+	{
+		printf("\n 두 문자열은 같습니다0\n");
+	}
+	else if (Compare < 0)
+	{
+		printf("\n 첫번째 문자열이 작습니다\n-1\n");
+	}
+	else
+	{
+		printf("\n 두번째 문자열이 작습니다\n+1\n");
+	}
+	
+
+	
+
+	                                  
+ 
+
+
 	// 5. 문자열을 입력 받아 정수를 리턴하는 함수 만들기
 	//		int MyAtoI(const char* Source);
+	
+	int IntegerNumber = MyAtoI("567");
+
+
+	
+	
+	
+
+
+
 	// 6. 문자열을 입력 받아 실수를 리턴하는 함수 만들기
 	//		float MyAtoF(const char* Source);
+
+	float FloatNumber = MyAtoF("123.45");
+	FloatNumber = MyAtoF("55");
+
+
+
+	/*9 / 10 심화문제
+		미로 탈출 게임을 수정하여 맵 데이터파일에서 읽은 내용을 기반으로 맵 만들기
+		데이터 파일 구조
+		첫줄은 가로 길이와 세로 길이가 저장되어 있다.
+		ex) 20, 10 ⇒ 가로 20, 세로 10
+		두번째 줄 부터는 미로의 각 셀을 콤마(, )로 구분하여 셀의 타입을 나타낸다.
+		콤마(, ),
+		\n으로 다음 줄로 이동한다.*/
+
+
 
 	const int Size = 32;
 	char InputString[Size];
@@ -250,7 +304,7 @@ void TestString()
 
 	size_t Position = str1.find('e');
 	// 발견을 못했으면 std::string::npos 리턴
-	Position = str1.find('e', Position+1);	// 두번째 e를 찾을 때(첫번째 e가 발견되었다는 전제하에)
+	Position = str1.find('e', Position + 1);	// 두번째 e를 찾을 때(첫번째 e가 발견되었다는 전제하에)
 
 	str1[1] = 'E';	// 특정 위치의 글자에 접근하기. 인덱스 범위 확인을 안함. 런타임 에러가 뜰 수 있음
 	//str1[10] = 'E';	// 터짐
@@ -258,4 +312,84 @@ void TestString()
 
 	str1.c_str();	// C스타일 문자열 접근하기
 }
+
+int MyStringCompare(const char* String1, const char* String2)
+{
+	while (*String1 != '\0' && *String2 != '\0')
+	{
+		if (*String1 != *String2)
+		{
+			return(unsigned char)*String1 - (unsigned char)*String2;
+		}
+		String1++;
+		String2++;
+	}
+	return (unsigned char)*String1 - (unsigned char)*String2;
+}
+// 둘 다 \0이 되었다 -> 둘의 길이가 같고 안의 글자들도 같았다 . ->0
+// 하나만 \0이 되었다 -> 둘의 길이가 다르다 . -> 서로다르다.
+// 중간에 다른 곳이 있었다  -> 서로다르다.
+
+
+int MyAtoI(const char* Source)
+{
+	//부호 첫번째니까 따로 처리
+	
+	int Index = 0;
+	int Sign = 1;
+	bool IsMinus = false;
+	if (Source[0] == '-')
+	{
+		Sign = -1;
+		Index++;
+	}
+	int Result = 0;
+	while (Source[Index] != '\0')
+	{
+		Result = Result*10 + Source[Index] - '0';
+		/*if (Source[Index] >= '0'&&Source[Index]<='9')
+			Index++; 하면 좋다*/
+	}
+
+
+	return Sign * Result;
+}
+
+
+
+
+float MyAtoF(const char* Source)
+{
+	float Result = 0.0f;
+	int PointPosition = FindCharIndex(Source, '.');
+	if (PointPosition >= 0)
+	{
+		//점을 찾았다
+		//MyAtoI(Source);
+		char Integral[32];
+		MyStringCopy(Source, Integral);
+		Integral[PointPosition] = '\n';
+		Result = static_cast<float>(MyAtoI(Integral));
+		char Fractional[32];
+		float frac = 0.1f;
+		MyStringCopy(Source+PointPosition+1, Fractional);
+		int Index = 0;
+		while (Fractional[Index]!= '\n')
+		{
+			Result += (Fractional[Index]-'0') * frac;
+			Index++;
+			frac *= 0.1f;
+		}
+
+	}
+	else
+	{
+		//점을 못 찾았다
+		Result = static_cast<float>(MyAtoI(Source));
+	}
+
+	return Result;
+}
+
+
 

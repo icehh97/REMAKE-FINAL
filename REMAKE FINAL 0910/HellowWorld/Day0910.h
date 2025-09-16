@@ -16,3 +16,6 @@ void MyStringCat(char* Source, const char* Destination);
 void SimpleParser(char* Source, const char Delimiter);
 void ReadFile();
 void TestString();
+int MyStringCompare(const char* String1, const char* String2);
+int MyAtoI(const char* Source);
+float MyAtoF(const char* Source);
