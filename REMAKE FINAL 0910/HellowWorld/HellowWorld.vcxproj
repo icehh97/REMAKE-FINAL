@@ -123,22 +123,47 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="Blackjack.cpp" />
+    <ClCompile Include="Car.cpp" />
+    <ClCompile Include="Day0912.cpp" />
     <ClCompile Include="Day0908.cpp" />
     <ClCompile Include="Day0909.cpp" />
     <ClCompile Include="Day0910.cpp" />
+    <ClCompile Include="Day0911.cpp" />
+    <ClCompile Include="Day0916.cpp" />
+    <ClCompile Include="fuck.cpp" />
     <ClCompile Include="header.cpp" />
     <ClCompile Include="HellowWorld.cpp" />
+    <ClCompile Include="Just Only Check.cpp" />
     <ClCompile Include="Personal notes.cpp" />
     <ClCompile Include="Practice_0905.cpp" />
     <ClCompile Include="TestMath.cpp" />
+    <ClCompile Include="Day0915.cpp" />
+    <ClCompile Include="WangGu.cpp" />
+    <ClCompile Include="연습장.cpp" />
+    <ClCompile Include="이런느낌.cpp" />
+    <ClCompile Include="주말과제.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animal.h" />
+    <ClInclude Include="Blackjack.h" />
+    <ClInclude Include="Car.h" />
     <ClInclude Include="Day0908.h" />
     <ClInclude Include="Day0909.h" />
     <ClInclude Include="Day0910.h" />
+    <ClInclude Include="Day0911.h" />
+    <ClInclude Include="Day0912.h" />
+    <ClInclude Include="Day0916.h" />
+    <ClInclude Include="fuck.h" />
     <ClInclude Include="header.h" />
+    <ClInclude Include="Position.h" />
     <ClInclude Include="Practice_0905.h" />
     <ClInclude Include="TestMath.h" />
+    <ClInclude Include="WangGu.h" />
+    <ClInclude Include="이런느낌.h" />
+    <ClInclude Include="주말과제.h" />
+    <ClInclude Include="Day0915.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
