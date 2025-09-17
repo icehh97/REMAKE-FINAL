@@ -1,4 +1,5 @@
-﻿  Monster.cpp
-  연습장.cpp
+﻿  HellowWorld.cpp
+C:\Users\stan9\source\repos\REMAKE-FINAL\REMAKE FINAL 0910\HellowWorld\HellowWorld.cpp(540,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Shape.cpp
   코드를 생성하고 있습니다...
-  HellowWorld.vcxproj -> C:\Users\KGA\Documents\202509161346\REMAKE FINAL 0910\x64\Debug\HellowWorld.exe
+  HellowWorld.vcxproj -> C:\Users\stan9\Source\Repos\REMAKE-FINAL\REMAKE FINAL 0910\x64\Debug\HellowWorld.exe

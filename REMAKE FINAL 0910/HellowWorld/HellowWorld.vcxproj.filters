@@ -19,6 +19,9 @@
     <Filter Include="리소스 파일\ㅈ같네">
       <UniqueIdentifier>{1732cadb-d92e-42d7-b567-0b4346beb126}</UniqueIdentifier>
     </Filter>
+    <Filter Include="리소스 파일\모양">
+      <UniqueIdentifier>{1b4f5595-befb-4c3f-ac11-fbe13d03912c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HellowWorld.cpp">
@@ -87,6 +90,21 @@
     <ClCompile Include="Monster.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Day0917.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Hawk.cpp">
+      <Filter>리소스 파일\ㅈ같네</Filter>
+    </ClCompile>
+    <ClCompile Include="Dog.cpp">
+      <Filter>리소스 파일\ㅈ같네</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>리소스 파일\모양</Filter>
+    </ClCompile>
+    <ClCompile Include="IFlyable.cpp">
+      <Filter>리소스 파일\ㅈ같네</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -148,6 +166,24 @@
     </ClInclude>
     <ClInclude Include="Animal.h">
       <Filter>리소스 파일\ㅈ같네</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0917.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Hawk.h">
+      <Filter>리소스 파일\ㅈ같네</Filter>
+    </ClInclude>
+    <ClInclude Include="TeseSample.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Dog.h">
+      <Filter>리소스 파일\ㅈ같네</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>리소스 파일\모양</Filter>
+    </ClInclude>
+    <ClInclude Include="IFlyable.h">
+      <Filter>리소스 파일\모양</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

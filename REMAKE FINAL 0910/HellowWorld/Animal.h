@@ -4,8 +4,8 @@
 class Animal
 {
 public:
-	void Move();
-	void MakeSound();
+	virtual void Move(); //move는 가상 함수다
+	virtual void MakeSound(); //덮어 쓴 거
 	void Eat();
 	void Sleep();
 
@@ -24,6 +24,7 @@ public:
 		: Name(InName)
 	{
 	}	// 짧은 경우는 함수의 구현이 해더에 있어도 된다(자동 inline처리)
+	virtual ~Animal(){}//소멸자 꼭만들어주자 virtual쓰면
 
 protected:
 	inline void SetEnergy(float InEnergy)

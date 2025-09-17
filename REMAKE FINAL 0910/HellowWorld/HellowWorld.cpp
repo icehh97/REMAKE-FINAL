@@ -439,22 +439,58 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 //		-맴버 변수 : 객체의 상태나 데이터를 저장하는 변수. (속성, 필드라고도 함)
 //		-맴버 함수 : 객체가 할 수 있는 동작이나 기능을 정의한 함수.(매서드라고 함)
 
-//접근제한자(Access Modifier)
-//	- 이 객체의 내부를 누구까지 볼 수 있을 것인가를 설정
-//	- public, protected, private
-//	- public : 누구든지 접근 가능하다. //뒤에 전부다 퍼블릭으로 자기 앞에 접근 제한자에 따라 권한 달라짐
-//	- private : 나만 접근 가능하다 //있는지 없는지 조차 모름
-//	- protected: 나와 나를 상속받은 대상만 접근 가능하다. 
-//	- 구조체의 접근제한자 : 설정안하면 기본 public
-//	- 클래스의 접근제한자 : 설정안하면 기본 private
-//
-//
-//상속
-//-부모 클래스의 맴버를 물려 받는 행위
-//-특징
-//	-코드 재사용성이 증가한다
-//	-계층구조로 객체들의 관계를 명확히 할 수 있다.
-//	-부모 클래스의 포인터나 참조를 통해 자식 클래스를 다룰 수 있다.
+/*
+* 접근 제한자(Access Modifier)
+*	- 이 객체의 내부(맴버)를 누구까지 볼 수 있을 것인가를 설정
+*	- public, protected, private
+*	- public : 누구든지 접근 가능하다.
+*	- private : 나만 접근 가능하다.
+*	- protected : 나와 나를 상속받은 대상만 접근 가능하다.
+*	- 구조체의 접근제한자 : 설정안하면 기본적으로 public
+*	- 클래스의 접근제한자 : 설정안하면 기본적으로 private
+*/
+
+/*
+* 상속
+*  - 부모 클래스의 맴버를 물려 받는 행위
+*  - 특징
+*	- 코드 재사용성이 증가한다.
+*	- 계층구조로 객체들의 관계를 명확히 할 수 있다.
+*	- 부모 클래스의 포인터나 참조를 통해 자식 클래스를 다룰 수 있다.
+*/
+
+/*
+* 가상 함수
+*  - 부모 클래스에서 함수의 선언 앞에다가 virtual을 붙이면 된다.
+*  - 자식 클래스는 부모의 가상함수를 덮어쓸 경우에만 함수의 선언 앞에 virtual이라고 쓰고 뒤에 override라고 붙인다.
+*  - 주의 : 상속을 하거나 받았을 때는 소멸자를 무조건 가상함수 처리해야 한다.
+*  - 가상 테이블(vtable)
+*		- 클래스에 가상 함수가 하나라도 있으면 자동으로 생성
+*		- 그 클래스의 가상 함수들의 주소 목록을 저장해 놓은 테이블
+*  - 다이아몬드 상속 문제 : 다중 상속시 발생하는 대표적인 문제 
+*/
+/*
+* dynamic_cast
+	- 런타임(실행중)에 이 주소가 실제 어떤 자식 클래스의 객체를 가리키고 있는지 안전하게 확인해주는 cast
+	- 부모 클래스에 반드시 하나 이상의 가상함수가 있어야 함.(vtable이 있어야 하기 때문에)
+	- Child* pChild = dynamic_cast<Child*>(pParent);
+	- 속도가 늦기 때문에 가능한 적게 쓰는게 좋다.
+	
+/*
+* 순수 가상 함수
+*	- 가상 함수인데 구현을 "= 0"으로 표시해 놓은 것
+*	- 선언만 있고 구현이 없다
+*	- 순수 가상함수를 가진 클래스를 상속 받은 클래스는 반드시 순수 가상함수를 override해서 구현해야한다.
+*/
+
+/*
+* 추상 클래스
+*	- 하나 이상의 순수 가상 함수를 포함하는 클래스
+*	- 다른 클래스가 상속받을 기본 틀을 제공하기 위해 사용
+*	- 인스턴스화 할 수 없다. -> 상속 받은 클래스에서 순수 가상함수를 override 한 후에 인스턴스화 가능
+*/
+
+
 
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -477,18 +513,13 @@ std::string : 스트링. 문자열을 쉽게 다룰 수 있는 자료형.
 #include "Day0912.h"
 #include "Day0915.h"
 #include "Day0916.h"
+#include "Day0917.h"
 #include "Position.h"
 #include "Monster.h"
 #include "HellowWorld.h"
 
 
-int global = 10;
-//using namespace std;
 
-void Test()
-{
-	global = 100;
-}
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
 
 
@@ -500,20 +531,28 @@ void Test()
 //   5. [프로젝트] > [새 항목 추가]로 이동하여 새 코드 파일을 만들거나, [프로젝트] > [기존 항목 추가]로 이동하여 기존 코드 파일을 프로젝트에 추가합니다.
 //   6. 나중에 이 프로젝트를 다시 열려면 [파일] > [열기] > [프로젝트]로 이동하고 .sln 파일을 선택합니다.
 
+int global = 10;
+//using namespace std;
+
 int main() // 엔트리 포인트(코드가 시작되는 곳)
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	srand(time(0));
 
-	printf("\n");
+	printf("\n\n\n\n\n\n\n\n\n");
+
+	Day0917 day0917;
+	//day0917.TestPolymorphism();
+	day0917.TestVirtualFunction();
+	day0917.TestPractice1();
+
 
 	//Day0916 day0916;
 	//day0916.ClassInstance();
 	//day0916.TestAnimal();
 	/*day0916.TestTiger();*/
 
-	TestMonster();
-
+	//TestMonster();
 	//Day0915_WeekPracticeBlackjackTest();
 	//Day0915_WeekPracticeBlackjack();
 
